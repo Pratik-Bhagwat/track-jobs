@@ -1,13 +1,15 @@
 import { Button } from "@/components/ui/button";
-import { IconLock, IconSparkle2 } from "@tabler/icons-react";
+import { IconLock, IconSparkle } from "@tabler/icons-react";
+import { EyeBrowBadge, SectionHeader } from "./utils";
 
 export const HeroSection = () => {
   return (
     <section className="bg-background flex w-full flex-col items-center justify-center gap-4 px-8 py-20">
       <SectionHeader
+        variant="hero"
         badge={
           <EyeBrowBadge text="Now with AI autofill + interview prep">
-            <IconSparkle2 stroke={2} className="size-4 text-neutral-500" />
+            <IconSparkle stroke={2} className="size-4 text-neutral-500" />
           </EyeBrowBadge>
         }
         title="Stop losing track of your job search"
@@ -25,47 +27,6 @@ export const HeroSection = () => {
 
       <PreviewScreen />
     </section>
-  );
-};
-
-type SectionHeaderProps = {
-  badge?: React.ReactNode;
-  title: string;
-  description: string;
-};
-
-const SectionHeader = ({ badge, title, description }: SectionHeaderProps) => {
-  return (
-    <div className="flex flex-col items-center gap-4">
-      {badge}
-
-      <div className="flex max-w-3xl flex-col items-center gap-4">
-        <h1 className="text-center text-5xl leading-14 font-medium tracking-tighter text-balance">
-          {title}
-        </h1>
-
-        <p className="max-w-[90%] text-center text-base font-normal text-balance text-neutral-600">
-          {description}
-        </p>
-      </div>
-    </div>
-  );
-};
-
-type EyeBrowBadgeProps = {
-  children?: React.ReactNode;
-  text: string;
-};
-
-const EyeBrowBadge = ({ children, text }: EyeBrowBadgeProps) => {
-  return (
-    <div className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5">
-      {children}
-
-      <p className="text-[10px] font-semibold tracking-wide text-neutral-500 uppercase">
-        {text}
-      </p>
-    </div>
   );
 };
 
