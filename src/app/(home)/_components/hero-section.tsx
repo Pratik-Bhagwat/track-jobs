@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { IconLock, IconSparkle } from "@tabler/icons-react";
-import { EyeBrowBadge, SectionHeader } from "./utils";
+import { EyeBrowBadge, SectionHeader, SectionWrappper } from "./utils";
 
 export const HeroSection = () => {
   return (
-    <section className="bg-background flex w-full flex-col items-center justify-center gap-4 px-8 py-20">
+    <SectionWrappper>
       <SectionHeader
         variant="hero"
         badge={
@@ -26,13 +26,13 @@ export const HeroSection = () => {
       </p>
 
       <PreviewScreen />
-    </section>
+    </SectionWrappper>
   );
 };
 
 const PreviewScreen = () => {
   return (
-    <div className="mt-10 flex h-full w-full items-center justify-center">
+    <div className="mt-6 flex h-full w-full items-center justify-center">
       <div className="h-full w-full overflow-hidden rounded-lg border border-neutral-200">
         <div className="flex items-center justify-between border-b border-neutral-200 bg-white p-2">
           <div className="flex items-center gap-2">

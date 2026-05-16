@@ -8,7 +8,7 @@ import {
   IconSparkles2,
   IconStack2,
 } from "@tabler/icons-react";
-import { EyeBrowBadge, SectionHeader } from "./utils";
+import { EyeBrowBadge, SectionHeader, SectionWrappper } from "./utils";
 import { cn } from "@/lib/utils";
 
 type Feature = {
@@ -53,25 +53,23 @@ const features: Feature[] = [
 
 export const FeatureSection = () => {
   return (
-    <section className="w-full bg-white px-6 py-24">
-      <div className="mx-auto flex max-w-7xl flex-col gap-14">
-        <SectionHeader
-          badge={
-            <EyeBrowBadge text="Features">
-              <IconStack2 stroke={2} className="size-4 text-neutral-500" />
-            </EyeBrowBadge>
-          }
-          title="Everything you need in one place"
-          description="Built for serious job seekers."
-        />
+    <SectionWrappper className="w-full bg-white px-6 py-24">
+      <SectionHeader
+        badge={
+          <EyeBrowBadge text="Features">
+            <IconStack2 stroke={2} className="size-4 text-neutral-500" />
+          </EyeBrowBadge>
+        }
+        title="Everything you need in one place"
+        description="Built for serious job seekers."
+      />
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
-            <FeatureCard key={feature.title} {...feature} />
-          ))}
-        </div>
+      <div className="mt-3 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {features.map((feature) => (
+          <FeatureCard key={feature.title} {...feature} />
+        ))}
       </div>
-    </section>
+    </SectionWrappper>
   );
 };
 
@@ -85,11 +83,13 @@ const FeatureCard = ({
       <Illustration />
 
       <div className="space-y-2">
-        <h3 className="text-lg font-medium tracking-tight text-neutral-900">
+        <h3 className="text-foreground text-lg font-medium tracking-tight">
           {title}
         </h3>
 
-        <p className="text-sm leading-6 text-neutral-600">{description}</p>
+        <p className="text-secondary-foreground text-sm leading-6">
+          {description}
+        </p>
       </div>
     </div>
   );

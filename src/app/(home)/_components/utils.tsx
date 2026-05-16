@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import React from "react";
 
 type EyeBrowBadgeProps = {
   children?: React.ReactNode;
@@ -74,4 +75,17 @@ const SectionHeader = ({
   );
 };
 
-export { SectionHeader, EyeBrowBadge };
+type SectionWrappperProps = {
+  children: React.ReactNode;
+  className?: string;
+};
+
+const SectionWrappper = ({ children, className }: SectionWrappperProps) => {
+  return (
+    <section className={cn("bg-background w-full px-6 py-24", className)}>
+      <div className="mx-auto flex max-w-7xl flex-col gap-6">{children}</div>
+    </section>
+  );
+};
+
+export { SectionHeader, EyeBrowBadge, SectionWrappper };

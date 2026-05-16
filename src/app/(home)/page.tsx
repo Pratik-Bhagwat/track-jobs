@@ -5,6 +5,7 @@ import { HeroSection } from "./_components/hero-section";
 import { TrustedBySection } from "./_components/trusted-by-section";
 import { SoundSimilarSection } from "./_components/sound-similar-section";
 import { FeatureSection } from "./_components/features-section";
+import { HowItWorksSection } from "./_components/how-it-works-section";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
             <TrustedBySection />
             <SoundSimilarSection />
             <FeatureSection />
+            <HowItWorksSection />
           </Wrapper>
         </main>
       </div>
